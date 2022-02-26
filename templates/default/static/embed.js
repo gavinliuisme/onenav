@@ -50,8 +50,11 @@ function get_domain(){
   if( (port == 80) || (port == 443) ){
     port = '';
   }
+  else{
+    port = ':' + port;
+  }
   var hostname = window.location.hostname;
-  domain = protocol + port + hostname;
+  domain = protocol + hostname + port;
   return domain;
 }
 //弹窗
